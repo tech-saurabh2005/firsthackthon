@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoFlow - Zero-Code Automation</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+
+    
+
+</head>
+<body>
+    <!-- Skip link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar" aria-label="Main navigation">
+                <div class="logo">AutoFlow</div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#form-data">Form Data</a>
+                    <a href="#workflows">My Workflows</a>
+                    <a href="#help">Help</a>
+                </div>
+                
+
+                <div class="controls">
+                    <div class="font-size-controls">
+                        <button class="font-size-btn" id="decrease-font" aria-label="Decrease font size">A-</button>
+                        <button class="font-size-btn" id="reset-font" aria-label="Reset font size">A</button>
+                        <button class="font-size-btn" id="increase-font" aria-label="Increase font size">A+</button>
+                    </div>
+                    <button id="contrast-toggle" class="btn btn-secondary">High Contrast</button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+                    <div class="user-controls">
+                        <button id="login-btn" class="btn btn-primary">Login</button>
+                        <div class="user-dropdown" id="user-dropdown" style="display: none;">
+                            <div class="user-avatar" id="user-avatar">U</div>
+                            <div class="dropdown-menu" id="dropdown-menu">
+                                <button class="dropdown-item" id="profile-btn">My Profile</button>
+                                <button class="dropdown-item" id="logout-btn">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile">
+                    <a href ="#profile">Profile</a>
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/032/176/191/small/business-avatar-profile-black-icon-man-of-user-symbol-in-trendy-flat-style-isolated-on-male-profile-people-diverse-face-for-social-network-or-web-vector.jpg">
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="signup">Sign Up</button>
+            </div>
+            <div class="auth-content">
+                <!-- Login Form -->
+                <form class="auth-form active" id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                    <div class="auth-footer">
+                        <p>Don't have an account? <a id="show-signup">Sign up</a></p>
+                    </div>
+                </form>
+
+                <!-- Sign Up Form -->
+                <form class="auth-form" id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" class="form-control" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <input type="password" id="signup-confirm-password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Sign Up</button>
+                    <div class="auth-footer">
+                        <p>Already have an account? <a id="show-login">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDES -->
+    <!-- HERO SLIDER -->
+
+<!-- HERO SECTION -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+  <div class="carousel-inner">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <div class="hero-slide d-flex justify-content-center align-items-center" 
+           style="background-image: url('https://www.graycelltech.com/wp-content/uploads/2024/01/poonam_40377991-1.png');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-center">
+          <h1>Welcome to Our Website</h1>
+          <h2>Automate Your Online Work Without Code</h2>
+          <p>Create powerful automations for forms, notifications, and repetitive tasks.</p>
+          <a href="https://kissflow.com/low-code/zero-code/zero-code-overview/" class="btn btn-primary hero-btn">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <div class="hero-slide d-flex justify-content-center align-items-center" 
+           style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-center">
+          <h1>Welcome to Our Website</h1>
+          <h2>Automate Your Online Work Without Code</h2>
+          <p>Create powerful automations for forms, notifications, and repetitive tasks.</p>
+          <a href="#" class="btn btn-primary hero-btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <div class="hero-slide d-flex justify-content-center align-items-center" 
+           style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-center">
+          <h1>Welcome to Our Website</h1>
+          <h2>Automate Your Online Work Without Code</h2>
+          <p>Create powerful automations for forms, notifications, and repetitive tasks.</p>
+          <a href="#" class="btn btn-primary hero-btn">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Carousel Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title"><u>Why Choose AutoFlow?</u></h2>
+            <div class="features-grid">
+                <div class="feature-card card" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHYAK5iklVwYSR2yr_erx1pH-E2Ax71TJsFw&s');">
+                    <div class="feature-icon" aria-hidden="true">🚀</div>
+                    <h3>No Coding Required</h3>
+                    <p>Create automations through simple visual tools - no programming knowledge needed.</p>
+                </div>
+                <div class="feature-card card"  style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_myL3KSxzZJ_xJaTv4VxKEraROMafKVvT_Q&s');">
+                    <div class="feature-icon" aria-hidden="true">⏱️</div>
+                    <h3>Save Time</h3>
+                    <p>Automate repetitive tasks and focus on what matters most.</p>
+                </div>
+                <div class="feature-card card"  style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAimxhujYJluCGHnnki7ypqo7te6_5FwHaCQ&s');">
+                    <div class="feature-icon" aria-hidden="true">📝</div>
+                    <h3>Smart Form Filling</h3>
+                    <p>Store form data and automatically fill out online forms with a single click.</p>
+                </div>
+                <div class="feature-card card"  style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSm8y8bhkFO_iLTAS_3FTEgvd5q2oT6P-F9A&s');">
+                    <div class="feature-icon" aria-hidden="true">🔒</div>
+                    <h3>Privacy Focused</h3>
+                    <p>Your data stays secure and private with our encryption protocols.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Data Storage Section -->
+    <section id="form-data" class="form-data-storage">
+        <div class="container">
+            <h2 class="section-title">Form Data Storage</h2>
+            <div class="form-data-container">
+                <div class="form-data-sidebar">
+                    <div class="form-data-tabs">
+                        <button class="form-data-tab active" data-tab="my-data">Edit Information</button>
+                        <button class="form-data-tab" data-tab="add-data">Add New Data</button>
+                        <button class="form-data-tab" data-tab="templates">Form Templates</button>
+                    </div>
+                </div>
+                <div class="form-data-content">
+                    <!-- My Form Data Tab -->
+                    <div class="form-data-tab-content active" id="my-data-tab">
+                        <h3>Stored Form Data</h3>
+                        <p>Manage your saved form data that can be used to automatically fill out online forms.</p>
+                        
+                        <div class="form-data-list" id="form-data-list">
+                            <!-- Form data will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Add New Data Tab -->
+                    <div class="form-data-tab-content" id="add-data-tab">
+                        <h3>Add New Form Data</h3>
+                        <p>Create a new form data profile that can be used to automatically fill out forms.</p>
+                        
+                        <div class="card">
+                            <form class="form-data-form" id="add-form-data-form">
+                                <div class="form-group">
+                                    <label for="form-data-name">Profile Name</label>
+                                    <input type="text" id="form-data-name" class="form-control" placeholder="e.g., Personal Information, Job Application" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-data-description">Description</label>
+                                    <textarea id="form-data-description" class="form-control" placeholder="Describe what this form data is for"></textarea>
+                                </div>
+                                
+                                <h4>Form Fields</h4>
+                                <div class="field-list" id="field-list">
+                                    <!-- Fields will be added here -->
+                                </div>
+                                
+                                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                                    <button type="button" class="btn btn-secondary" id="add-field-btn">Add Field</button>
+                                    <button type="submit" class="btn btn-primary">Save Form Data</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Form Templates Tab -->
+                    <div class="form-data-tab-content" id="templates-tab">
+                        <h3>Form Templates</h3>
+                        <p>Use these templates to quickly create form data for common scenarios.</p>
+                        
+                        <div class="form-data-list">
+                            <div class="form-data-card card">
+                                <h4>Personal Information</h4>
+                                <p>Standard personal details like name, address, phone number, and email.</p>
+                                <div class="form-data-actions">
+                                    <button class="btn btn-primary use-template" data-template="personal">Use Template</button>
+                                </div>
+                            </div>
+                            <div class="form-data-card card">
+                                <h4>Job Application</h4>
+                                <p>Information commonly required for job applications.</p>
+                                <div class="form-data-actions">
+                                    <button class="btn btn-primary use-template" data-template="job">Use Template</button>
+                                </div>
+                            </div>
+                            <div class="form-data-card card">
+                                <h4>E-commerce Checkout</h4>
+                                <p>Shipping and payment information for online shopping.</p>
+                                <div class="form-data-actions">
+                                    <button class="btn btn-primary use-template" data-template="ecommerce">Use Template</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Management -->
+    <section id="workflows" class="workflow-management">
+        <div class="container">
+            <h2 class="section-title">My Workflows</h2>
+            <div class="workflow-list" id="workflow-list">
+                <!-- Workflows will be loaded here -->
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <button id="import-workflow" class="btn btn-secondary">Import Workflow</button>
+                <input type="file" id="import-file" accept=".json" style="display: none;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AutoFlow</h3>
+                    <p>Making automation accessible to everyone, regardless of technical skills.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#form-data">Form Data</a></li>
+                        <li><a href="#workflows">My Workflows</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 AutoFlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Edit Form Data Modal -->
+    <div class="modal" id="edit-form-data-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Form Data</h3>
+                <button class="close-modal" id="close-edit-form-data-modal" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="edit-form-data-form">
+                <input type="hidden" id="edit-form-data-id">
+                <div style="margin-bottom: 1rem;">
+                    <label for="edit-form-data-name">Profile Name</label>
+                    <input type="text" id="edit-form-data-name" class="form-control" required>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="edit-form-data-description">Description</label>
+                    <textarea id="edit-form-data-description" class="form-control"></textarea>
+                </div>
+                
+                <h4>Form Fields</h4>
+                <div class="field-list" id="edit-field-list">
+                    <!-- Fields will be added here -->
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button type="button" class="btn btn-secondary" id="add-edit-field-btn">Add Field</button>
+                    <button type="submit" class="btn btn-primary">Update Form Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+      
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+    </html>
