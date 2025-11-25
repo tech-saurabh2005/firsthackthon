@@ -1,1 +1,1 @@
-my first coll hackthon on zero code automation for digital accessibility
+my first college  hackthon on zero code automation for digital accessibility
